@@ -22,11 +22,10 @@ export default function Header() {
 
   return (
     <header className="w-full top-0 z-30 bg-white shadow-sm">
-      {/* Top navigation bar */}
-      <div className="h-16 flex items-center justify-between px-4 py-2 lg:px-16">
+      <div className="relative h-16 flex items-center justify-between px-4 py-2 lg:px-16">
         {/* Left: Logo */}
         <div
-          className="flex items-center gap-1 cursor-pointer"
+          className="flex items-center gap-1 cursor-pointer space-x-3"
           onClick={handleClick}
         >
           <img
@@ -41,8 +40,8 @@ export default function Header() {
           />
         </div>
 
-        {/* Center: Navigation */}
-        <nav className="hidden lg:flex justify-center space-x-8 text-gray-700 font-medium">
+        {/* Center: Navigation (perfectly centered) */}
+        <nav className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 space-x-8 text-gray-700 font-medium">
           <a href="/shop" className="hover:text-green-600 transition">
             Shop
           </a>
@@ -54,6 +53,9 @@ export default function Header() {
           </a>
           <a href="/our-story" className="hover:text-green-600 transition">
             Our Story
+          </a>
+          <a href="/our-story" className="hover:text-green-600 transition">
+            Our Values
           </a>
         </nav>
 
