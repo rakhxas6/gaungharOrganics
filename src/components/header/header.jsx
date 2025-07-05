@@ -12,7 +12,6 @@ import Tagline from "./Tagline";
 import { useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 
-
 export default function Header() {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,8 +19,6 @@ export default function Header() {
   const handleClick = () => {
     navigate("/");
   };
-
-  
 
   return (
     <header className="w-full top-0 z-30 bg-white shadow-sm">
@@ -40,7 +37,7 @@ export default function Header() {
           <img
             src={nameOnly}
             alt="GaunGhar Name Logo"
-            className="h-10 object-contain ml-4"
+            className="h-10 object-contain "
           />
         </div>
 

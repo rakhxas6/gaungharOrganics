@@ -46,10 +46,16 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="buttons flex gap-4 mt-4 flex-wrap">
-              <button onClick={handleClick} className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition">
+              <button
+                onClick={handleClick}
+                className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
+              >
                 Shop Now
               </button>
-              <button onClick={handleClick2} className="border border-green-600 text-green-600 px-6 py-3 rounded-md hover:bg-green-50 transition">
+              <button
+                onClick={handleClick2}
+                className="border border-green-600 text-green-600 px-6 py-3 rounded-md hover:bg-green-50 transition"
+              >
                 Learn Our Process
               </button>
             </div>
@@ -90,7 +96,7 @@ export default function Home() {
             width={400}
             height={400}
             alt="Traditional oil making"
-            className="rounded-xl shadow-lg  max-w-md  object-cover"
+            className="rounded-xl shadow-lg     object-cover"
           />
         </div>
       </div>
