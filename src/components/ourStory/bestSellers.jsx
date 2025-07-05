@@ -17,24 +17,6 @@ export default function BestSellers() {
       rating: 4.8,
       reviews: 150,
     },
-    {
-      id: 2,
-      title: "Wood Pressed Coconut Oil (1 litre)",
-      price: 270,
-      originalPrice: 320,
-      image: DemoImage,
-      rating: 4.7,
-      reviews: 90,
-    },
-    {
-      id: 3,
-      title: "Wood Pressed Mustard Oil (1 litre)",
-      price: 260,
-      originalPrice: 310,
-      image: DemoImage,
-      rating: 4.9,
-      reviews: 180,
-    },
   ];
 
   return (

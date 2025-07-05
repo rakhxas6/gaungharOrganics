@@ -54,20 +54,6 @@ export default function Cart() {
 
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState(null); // "khalti" | "esewa" | null
-  const [showWhatsAppModal, setShowWhatsAppModal] = useState(false);
-
-  // WhatsApp order message
-  const whatsappMessage = encodeURIComponent(
-    `Hello! I would like to place an order:\n\n${cartItems
-      .map(
-        (item) =>
-          `- ${item.title} (${item.selectedSize}): ${item.quantity} pcs, रु ${item.totalPrice}`
-      )
-      .join("\n")}\n\nTotal: रु ${totalPrice}\n\nPlease confirm. Thank you!`
-  );
-
-  // Replace with your WhatsApp phone number with country code, no plus sign, e.g. 9779812345678
-  const whatsappNumber = "9779867925779";
 
   // const discountThreshold = 5;
   // const discountPercent = 10;
@@ -219,7 +205,7 @@ export default function Cart() {
 
           {/* Checkout Button */}
           <button
-            onClick={() => setShowWhatsAppModal(true)}
+            onClick={() => setShowPaymentModal(true)}
             className="mt-6 w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-all font-semibold text-lg shadow-sm"
           >
             Proceed to Checkout
@@ -302,8 +288,9 @@ export default function Cart() {
         </div>
       </div>
 
+
       {/* Payment Modal */}
-      {/* {showPaymentModal && !paymentMethod && ( 
+       {/* {showPaymentModal && !paymentMethod && ( 
         <div className="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center px-4">
           <div className="bg-white rounded-2xl p-8 w-full max-w-xl shadow-xl relative">
             <button
@@ -375,39 +362,6 @@ export default function Cart() {
           </div>
         </div>
       )}  */}
-
-      {/* WhatsApp Order Modal */}
-      {showWhatsAppModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center px-4">
-          <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-xl relative text-center">
-            <button
-              className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl font-bold"
-              onClick={() => setShowWhatsAppModal(false)}
-              aria-label="Close modal"
-            >
-              ×
-            </button>
-
-            <h2 className="text-xl font-semibold mb-4 text-green-700">
-              Place Your Order via WhatsApp
-            </h2>
-
-            <p className="mb-6 text-gray-700">
-              Our payment integration will be done soon. For now, please contact
-              us on WhatsApp to place your order.
-            </p>
-
-            <a
-              href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition"
-            >
-              Chat on WhatsApp
-            </a>
-          </div>
-        </div>
-      )}
     </div>
   );
 }

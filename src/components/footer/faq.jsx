@@ -29,26 +29,6 @@ const inquiries = [
     answer:
       "Store herbal ghee in an airtight container at room temperature, away from direct sunlight. Properly stored, it can last several months without refrigeration.",
   },
-  {
-    question: "Can pure cow ghee be used for high-heat cooking?",
-    answer:
-      "Absolutely! Pure cow ghee has a high smoke point of around 250°C (482°F), making it ideal for frying, sautéing, and other high-heat cooking methods.",
-  },
-  {
-    question: "Are your natural spices free from artificial additives?",
-    answer:
-      "Yes, all our natural spices are 100% pure and free from any artificial colors, preservatives, or additives, ensuring the highest quality and flavor.",
-  },
-  {
-    question: "Are your natural spices free from artificial additives?",
-    answer:
-      "Yes, all our natural spices are 100% pure and free from any artificial colors, preservatives, or additives, ensuring the highest quality and flavor.",
-  },
-  {
-    question: "Do traditional pickles contain any preservatives?",
-    answer:
-      "Our traditional pickles are made using natural fermentation methods and do not contain artificial preservatives, making them a healthy and tasty accompaniment.",
-  },
 ];
 
 const FAQ = () => {

@@ -27,7 +27,7 @@ export default function Footer() {
               className="w-32 h-32 object-contain"
             />
             <div>
-              <h2 className="text-4xl font-bold mb-4">
+              <h2 className=" text-2xl md:text-3xl font-[500] mb-4">
                 From our village to your kitchen!
               </h2>
               <p className="text-gray-600 text-sm">

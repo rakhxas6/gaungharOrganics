@@ -22,9 +22,9 @@ export default function Home() {
   };
 
   return (
-    <div className="mainContent min-h-[83vh] flex flex-col lg:flex-row justify-between items-center px-6 md:px-6 lg:px-16 pt-8 gap-2 border-b-2 border-gray-400 border-opacity-60">
+    <div className="mainContent min-h-[85vh] flex flex-col lg:flex-row justify-between items-center px-6 md:px-6 lg:px-16 pt-8 gap-2 border-b border-gray-400 border-opacity-60">
       {/* Left Side Content */}
-      <div className="left w-full lg:w-1/2 flex flex-col gap-4 order-1 lg:order-2 mb-4">
+      <div className="left w-full lg:w-[40vw] flex flex-col gap-4 order-1 lg:order-2 mb-4">
         {/* Tagline Button */}
         <div className="button-container">
           <button className="flex text-sm bg-blue-100 items-center gap-2 py-2 px-6 rounded-full border hover:shadow-lg transition group">
@@ -35,10 +35,10 @@ export default function Home() {
 
         {/* Heading and Description */}
         <div className="infoContainer">
-          <h2 className="text-3xl md:text-4xl text-green-600 font-bold mb-4 leading-snug">
+          <h2 className="text-2xl md:text-3xl text-green-600 font-bold mb-4 leading-snug">
             Discover the Pure Essence of Traditional Oil Making
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl mb-4">
+          <p className="text-gray-600 text-sm md:text-xl mb-4">
             Experience the authentic taste and health benefits of traditionally
             crafted wood-pressed oils, made with care from organic seeds.
           </p>
@@ -90,11 +90,11 @@ export default function Home() {
       </div>
 
       {/* Right Side Large Image */}
-      <div className="right mb-4 w-full h-full lg:w-1/2 flex justify-center order-1 lg:order-2 relative">
+      <div className="right mb-4 w-full h-full lg:w-[60vw] flex justify-center order-1 lg:order-2 relative">
         <img
           src={backgroundImg}
           alt="children in the mustard field carrying dokos full of woods"
-          className="rounded-tr-[35px] rounded-bl-[35px] shadow-lg object-cover w-full max-h-[500px] lg:max-h-[550px]"
+          className="rounded-tr-[35px] rounded-bl-[35px] shadow-lg object-cover w-full  h-full"
         />
         {/* Optional Overlay */}
         {/* <div className="absolute inset-0 bg-black bg-opacity-10 rounded-tr-[35px] rounded-bl-[35px]"></div> */}
