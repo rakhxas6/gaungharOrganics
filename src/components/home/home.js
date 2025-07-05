@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <div className="mainContent min-h-[85vh] flex flex-col lg:flex-row justify-between items-center px-6 md:px-6 lg:px-16 pt-8 gap-2 border-b border-gray-400 border-opacity-60">
       {/* Left Side Content */}
-      <div className="left w-full lg:w-[40vw] flex flex-col gap-4 order-1 lg:order-2 mb-4">
+      <div className="left w-full lg:w-[40vw] flex flex-col gap-4 order-2 lg:order-1 mb-4">
         {/* Tagline Button */}
         <div className="button-container">
           <button className="flex text-sm bg-blue-100 items-center gap-2 py-2 px-6 rounded-full border hover:shadow-lg transition group">
@@ -90,7 +90,7 @@ export default function Home() {
       </div>
 
       {/* Right Side Large Image */}
-      <div className="right mb-4 w-full h-full lg:w-[60vw] flex justify-center order-1 lg:order-2 relative">
+      <div className="w-full md:w-1/2 mt-8 md:mt-0 relative group overflow-hidden rounded-tr-[35px] rounded-bl-[35px] h-[300px] sm:h-[360px] md:h-[400px] order-2 lg:order-1 mb-4 ">
         <img
           src={backgroundImg}
           alt="children in the mustard field carrying dokos full of woods"

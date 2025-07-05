@@ -9,6 +9,7 @@ import {
   FaFacebookF,
   FaTwitter,
   FaInstagram,
+  FaArrowRight,
 } from "react-icons/fa";
 import {
   MdEmail,
@@ -152,73 +153,113 @@ const Contact = () => {
         {/* Last Portion: Social + Visit Us */}
         <div className="lastPortion flex flex-col lg:flex-row gap-6 justify-between max-w-6xl mx-auto p-6">
           {/* Social Card */}
-          <div className="left flex-1 bg-white shadow-md rounded-lg p-6 min-h-[360px]">
-            <h1 className="text-3xl font-bold mb-4">Connect With Us</h1>
+          <div className="left flex-1 bg-white shadow-md rounded-2xl p-6 min-h-[360px]">
+            <h1 className="text-3xl font-bold mb-4 text-green-800">
+              Connect With Us
+            </h1>
             <p className="text-gray-600 text-lg font-serif mb-6">
               Follow us on social media for updates and community events
             </p>
-            <div className="buttons flex flex-col gap-3">
+
+            <div className="buttons flex flex-col gap-4">
+              {/* Instagram */}
               <a
                 href="https://www.instagram.com/gaungharorganics"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-4 bg-pink-100 text-pink-700 rounded-lg hover:bg-pink-200 transition duration-200"
+                className="flex items-center justify-between px-6 py-4 bg-pink-100 text-pink-700 rounded-lg hover:bg-pink-200 transition duration-200"
               >
-                <FaInstagram />
-                <span>Instagram</span>
-                <span>@gaungharorganics</span>
+                <div className="flex items-center gap-3">
+                  <FaInstagram size={24} />
+                  <div className="flex flex-col leading-tight">
+                    <span className="font-semibold">Instagram</span>
+                    <span className="text-sm text-gray-600">
+                      @gaungharorganics
+                    </span>
+                  </div>
+                </div>
+                <FaArrowRight className="text-pink-600" />
               </a>
+
+              {/* Twitter */}
               <a
                 href="https://twitter.com/gaungharorg"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-4 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition duration-200"
+                className="flex items-center justify-between px-6 py-4 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition duration-200"
               >
-                <FaTwitter />
-                <span>Twitter</span>
-                <span>@gaungharorg</span>
+                <div className="flex items-center gap-3">
+                  <FaTwitter size={24} />
+                  <div className="flex flex-col leading-tight">
+                    <span className="font-semibold">Twitter</span>
+                    <span className="text-sm text-gray-600">@gaungharorg</span>
+                  </div>
+                </div>
+                <FaArrowRight className="text-blue-600" />
               </a>
+
+              {/* Facebook */}
               <a
                 href="https://www.facebook.com/GauGharOrganic"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-4 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition duration-200"
+                className="flex items-center justify-between px-6 py-4 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition duration-200"
               >
-                <FaFacebookF />
-                <span>Facebook</span>
-                <span>/gaungharorganics</span>
+                <div className="flex items-center gap-3">
+                  <FaFacebookF size={24} />
+                  <div className="flex flex-col leading-tight">
+                    <span className="font-semibold">Facebook</span>
+                    <span className="text-sm text-gray-600">
+                      /gaungharorganics
+                    </span>
+                  </div>
+                </div>
+                <FaArrowRight className="text-blue-600" />
               </a>
             </div>
           </div>
 
           {/* Visit Us Card */}
-          <div className="right flex-1 bg-white shadow-md rounded-lg p-6 min-h-[360px]">
-            <h1 className="text-3xl font-bold mb-4">Visit Our Office</h1>
-            <div className="location flex flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <MdLocationPin size={30} className="text-red-600" />
-                <h2 className="text-xl font-semibold">Corporate Office</h2>
+          <div className="right flex-1 bg-white shadow-md rounded-2xl p-6 sm:p-8 min-h-[360px]">
+            <h1 className="text-3xl font-bold mb-6 text-green-800">
+              Visit Our Office
+            </h1>
+
+            <div className="location  bg-gray-50 rounded-xl p-5 sm:p-6 flex flex-col gap-5 text-gray-700">
+              {/* Address Block */}
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-full bg-red-100">
+                  <MdLocationPin size={28} className="text-red-600" />
+                </div>
+                <div>
+                  <h2 className="text-lg font-semibold text-green-700 mb-1">
+                    Corporate Office
+                  </h2>
+                  <p className="text-lg text-gray-600 font-thin leading-relaxed">
+                    GaunGhar Organic <br />
+                    Tamnagar, Butwal 32900 <br />
+                    Nepal
+                  </p>
+                </div>
               </div>
-              <span className="text-gray-600">
-                GaunGhar Organic, <br />
-                Tamnagar, Butwal <br />
-                Nepal 32300
-              </span>
-              <div className="buttons flex flex-col sm:flex-row gap-3 mt-4">
+
+              {/* Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 pt-2 pl-14">
                 <a
-                  href="https://maps.google.com?q=GaunGhar Organic, Tamnagar, Butwal"
+                  href="https://www.google.com/maps/place/Saurav+Oil+Mill/@27.685223,83.3922229,17z/data=!3m1!4b1!4m6!3m5!1s0x39968974678fb5a7:0x97edc6e9e819a84d!8m2!3d27.6852183!4d83.3947978!16s%2Fg%2F11qzx6452l?entry=ttu"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center font-semibold gap-2 px-4 py-3 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition duration-200"
+                  className="flex items-center justify-center gap-2 px-5 py-3 bg-green-100 text-green-700 font-semibold rounded-lg hover:bg-green-200 transition"
                 >
-                  <FaLandmark size={20} />
+                  <FaLandmark size={18} />
                   <span>Get Directions</span>
                 </a>
+
                 <a
-                  href="tel:+9779847925779"
-                  className="flex items-center font-semibold gap-2 px-4 py-3 bg-green-100 text-green-700 rounded-lg hover:bg-green-200 transition duration-200"
+                  href="tel:+97771450026"
+                  className="flex items-center justify-center gap-2 px-5 py-3 bg-green-100 text-green-700 font-semibold rounded-lg hover:bg-green-200 transition"
                 >
-                  <FaPhone size={20} />
+                  <FaPhone size={18} />
                   <span>Call Office</span>
                 </a>
               </div>
