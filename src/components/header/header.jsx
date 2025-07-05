@@ -25,7 +25,7 @@ export default function Header() {
       <div className="relative h-16 flex items-center justify-between px-4 py-2 lg:px-16">
         {/* Left: Logo */}
         <div
-          className="flex items-center gap-1 cursor-pointer space-x-3"
+          className="flex items-center  cursor-pointer "
           onClick={handleClick}
         >
           <img

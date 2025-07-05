@@ -28,7 +28,7 @@ export default function Footer() {
             />
             <div>
               <h2 className="text-4xl font-bold mb-4">
-                Be a part of Gaughar family!
+                From our village to your kitchen!
               </h2>
               <p className="text-gray-600 text-sm">
                 We'll share a sattvik recipe and a customised discount with you
