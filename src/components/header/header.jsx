@@ -10,12 +10,12 @@ import LogoEnglish from "../../assets/images/cropped img.png";
 import nameOnly from "../../assets/images/nameOnly.png";
 import Tagline from "./Tagline";
 import { useNavigate } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 
 export default function Header() {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
-
   const handleClick = () => {
     navigate("/");
   };
@@ -23,10 +23,10 @@ export default function Header() {
   return (
     <header className="w-full top-0 z-30 bg-white shadow-sm">
       {/* Top navigation bar */}
-      <div className="h-[11vh] grid grid-cols-3 items-center px-4 py-2 lg:px-16">
-        {/* Logo section (Left) */}
+      <div className="h-16 flex items-center justify-between px-4 py-2 lg:px-16">
+        {/* Logo section */}
         <div
-          className="flex items-center gap-2 cursor-pointer"
+          className="flex items-center flex-shrink-0 cursor-pointer"
           onClick={handleClick}
         >
           <img
@@ -37,12 +37,12 @@ export default function Header() {
           <img
             src={nameOnly}
             alt="GaunGhar Name Logo"
-            className="hidden md:block h-8 md:h-10 object-contain"
+            className="h-8 md:h-10 object-contain"
           />
         </div>
 
-        {/* Navigation links (Center) */}
-        <nav className="hidden lg:flex justify-center space-x-8 text-gray-700 font-medium">
+        {/* Main navigation links for large screens */}
+        <nav className="hidden lg:flex flex-1 justify-center space-x-8 text-gray-700 font-medium">
           <a href="/shop" className="hover:text-green-600 transition">
             Shop
           </a>
@@ -57,8 +57,8 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* Icons: Account, Cart, Hamburger menu (Right) */}
-        <div className="flex items-center justify-end space-x-4">
+        {/* Icons: Account, Cart, and Hamburger menu */}
+        <div className="flex items-center space-x-4">
           <a
             href="/account"
             className="text-gray-700 hover:text-green-600"
@@ -66,10 +66,7 @@ export default function Header() {
           >
             <HiOutlineUser size={24} />
           </a>
-          <div
-            className="relative cursor-pointer"
-            onClick={() => navigate("/cart")}
-          >
+          <div className="relative" onClick={() => navigate("/cart")}>
             <HiOutlineShoppingCart size={24} className="text-green-800" />
             {totalQuantity > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
