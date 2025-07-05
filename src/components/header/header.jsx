@@ -10,12 +10,12 @@ import LogoEnglish from "../../assets/images/cropped img.png";
 import nameOnly from "../../assets/images/nameOnly.png";
 import Tagline from "./Tagline";
 import { useNavigate } from "react-router-dom";
-import { FaShoppingCart } from "react-icons/fa";
 
 export default function Header() {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+
   const handleClick = () => {
     navigate("/");
   };
@@ -24,15 +24,15 @@ export default function Header() {
     <header className="w-full top-0 z-30 bg-white shadow-sm">
       {/* Top navigation bar */}
       <div className="h-16 flex items-center justify-between px-4 py-2 lg:px-16">
-        {/* Logo section */}
+        {/* Left: Logo */}
         <div
-          className="flex items-center flex-shrink-0 cursor-pointer"
+          className="flex items-center gap-1 cursor-pointer"
           onClick={handleClick}
         >
           <img
             src={LogoEnglish}
             alt="GaunGhar Organics Logo"
-            className="h-16 w-16 object-contain"
+            className="h-14 w-14 sm:h-16 sm:w-16 object-contain"
           />
           <img
             src={nameOnly}
@@ -41,8 +41,8 @@ export default function Header() {
           />
         </div>
 
-        {/* Main navigation links for large screens */}
-        <nav className="hidden lg:flex flex-1 justify-center space-x-8 text-gray-700 font-medium">
+        {/* Center: Navigation */}
+        <nav className="hidden lg:flex justify-center space-x-8 text-gray-700 font-medium">
           <a href="/shop" className="hover:text-green-600 transition">
             Shop
           </a>
@@ -57,7 +57,7 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* Icons: Account, Cart, and Hamburger menu */}
+        {/* Right: Icons */}
         <div className="flex items-center space-x-4">
           <a
             href="/account"
@@ -66,7 +66,10 @@ export default function Header() {
           >
             <HiOutlineUser size={24} />
           </a>
-          <div className="relative" onClick={() => navigate("/cart")}>
+          <div
+            className="relative cursor-pointer"
+            onClick={() => navigate("/cart")}
+          >
             <HiOutlineShoppingCart size={24} className="text-green-800" />
             {totalQuantity > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
@@ -74,7 +77,6 @@ export default function Header() {
               </span>
             )}
           </div>
-          {/* Mobile menu toggle */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="lg:hidden text-gray-700 focus:outline-none"
