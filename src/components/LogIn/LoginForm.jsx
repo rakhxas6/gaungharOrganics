@@ -21,10 +21,10 @@ export default function VedikaLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-10 sm:py-14">
+    <div className="flex items-center justify-center bg-gray-50 px-4 py-10 sm:py-14 min-h-[60vh] sm:min-h-[85vh] md:min-h-[90vh]">
       <Toaster position="top-center" />
       <div className="w-full max-w-sm bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
-        <div className="flex justify-center mb-4">
+        <div className="flex justify-center mb-4 mt-2">
           <span className="flex items-center gap-2 bg-green-100 text-green-700 px-3 py-1 rounded-full border border-green-300 text-sm font-medium">
             <GrSecure size={20} />
             Secure Login
@@ -44,7 +44,7 @@ export default function VedikaLogin() {
           </label>
 
           <div className="flex items-center border border-gray-300 rounded-2xl overflow-hidden mb-3">
-            <span className="px-3 sm:px-4 text-gray-600 text-sm font-semibold select-none">
+            <span className="px-3 sm:px-4 text-gray-600 text-xs md:text-sm font-semibold select-none">
               NP +977
             </span>
             <input

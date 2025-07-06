@@ -178,7 +178,7 @@ export default function OurStory() {
 
             {/* Right Image */}
             <div className="md:w-[55%] relative overflow-hidden">
-              <div className="relative w-full h-full md:h-[60vh] sm:aspect-video rounded-tr-[30px] rounded-br-[30px] overflow-hidden">
+              <div className="relative w-full  md:h-[60vh]   rounded-tr-[30px] rounded-br-[30px] overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1920"
                   alt="Modern Food Processing"
@@ -197,7 +197,7 @@ export default function OurStory() {
           <div className="flex flex-col md:flex-row items-center border-b border-gray-100  border-opacity-65 gap-4 max-w-6xl mx-auto rounded-2xl px-4 md:px-20 py-10">
             {/* Left Image */}
             <div className="md:w-[55%] relative overflow-hidden">
-              <div className="relative w-full h-full md:h-[60vh] sm:aspect-video rounded-bl-[30px] rounded-tl-[30px] overflow-hidden">
+              <div className="relative w-full h-full md:h-[60vh]  sm:aspect-video rounded-tr-[30px] rounded-br-[30px] overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1920"
                   alt="Traditional Methods"

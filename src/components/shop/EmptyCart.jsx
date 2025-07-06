@@ -44,21 +44,22 @@ const EmptyCart = () => {
           Explore our collection of pure, cold-pressed oils
         </h4>
 
-        
-          <button
-            onClick={handleBrowseProducts}
-            className="bg-green-600 text-white px-20 py-3 rounded-lg hover:bg-green-700 transition duration-300 mt-6"
-          >
-            <BiSolidBookBookmark size={20} className="inline mr-2" />
-            <span className="font-semibold">Browse Products</span>
-          </button>
-       
+        <button
+          onClick={handleBrowseProducts}
+          className="bg-green-600 text-white px-20 py-3 rounded-lg hover:bg-green-700 transition duration-300 mt-6"
+        >
+          <BiSolidBookBookmark size={20} className="inline mr-2" />
+          <span className="font-semibold">Browse Products</span>
+        </button>
       </div>
 
       {/* Sticky Footer Benefits */}
-      <div className="py-4 w-full flex flex-row  items-center justify-center gap-5 sm:gap-15 text-sm">
+      <div className="py-4 w-full flex flex-col sm:flex-row  items-center justify-center gap-5 sm:gap-15 text-sm   ">
         {benefits.map((benefit, index) => (
-          <div key={index} className="flex items-center gap-4 text-gray-700">
+          <div
+            key={index}
+            className="flex items-center gap-4 text-gray-700"
+          >
             {benefit.icon}
             <div className="flex flex-col leading-tight">
               <span className="font-medium">{benefit.title}</span>

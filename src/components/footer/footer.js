@@ -4,12 +4,11 @@ import { FaWhatsapp, FaCopyright } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 const products = [
-  { name: "Organic Mustard Oil", link: "/products/mustard-oil" },
-  { name: "Cold Pressed Coconut Oil", link: "/products/coconut-oil" },
-  { name: "Herbal Ghee", link: "/products/herbal-ghee" },
-  { name: "Pure Cow Ghee", link: "/products/cow-ghee" },
-  { name: "Natural Spices", link: "/products/spices" },
-  { name: "Traditional Pickles", link: "/products/pickles" },
+  { name: "Organic Mustard Oil (500 ml)", link: "/shop" },
+  { name: "Organic Mustard Oil (1l)", link: "/shop" },
+  { name: "Organic Mustard Oil (5l)", link: "/shop" },
+  { name: "Organic Mustard Oil (10l)", link: "/shop" },
+  { name: "Organic Mustard Oil (20l)", link: "/shop" },
 ];
 
 export default function Footer() {
@@ -24,11 +23,11 @@ export default function Footer() {
             <img
               src={LogoNepali}
               alt="Logo of GauGhar"
-              className="w-32 h-32 object-contain"
+              className=" w-24 h-24 md:w-32 md:h-32 object-contain"
             />
             <div>
-              <h2 className=" text-2xl md:text-3xl font-[500] mb-4">
-                From our village to your kitchen!
+              <h2 className=" text-3xl md:text-4xl font-thin mb-4">
+                From Our Village To Your Kitchen!
               </h2>
               <p className="text-gray-600 text-sm">
                 We'll share a sattvik recipe and a customised discount with you
@@ -39,7 +38,7 @@ export default function Footer() {
 
           {/* Contact Section */}
           <div className="text-sm text-gray-700 space-y-4">
-            <h2 className="text-3xl font-semibold mb-2">Contact Us</h2>
+            <h2 className="text-3xl md:text-4xl font-thin mb-2">Contact Us</h2>
             <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=gaungharorganic@gmail.com"
@@ -67,7 +66,7 @@ export default function Footer() {
         {/* Right Section */}
         <div className="flex-1 md:flex md:justify-end">
           <div className="text-left md:text-right">
-            <h2 className="text-lg font-semibold mb-3">Our Products</h2>
+            <h2 className="text-xl font-medium mb-3">Our Products</h2>
             <ul className="space-y-2 text-gray-700 text-sm">
               {products.map((item, index) => (
                 <li key={index}>
