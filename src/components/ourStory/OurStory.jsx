@@ -140,10 +140,9 @@ export default function OurStory() {
             </p>
           </div>
 
-          {/* First Card */}
-          <div className="flex flex-col md:flex-row items-center border-b border-gray-100  border-opacity-65 gap-4 max-w-6xl mx-auto rounded-2xl px-4 md:px-20 py-10">
-            {/* Left Text */}
-            <div className="md:w-[45%] px-6 ">
+          {/* Problem */}
+          <div className="flex flex-col md:flex-row items-center gap-4 max-w-6xl mx-auto border-b border-dashed border-gray-300 py-10 px-4 md:px-20 rounded-2xl">
+            <div className="md:w-[45%] w-full px-6">
               <div className="flex items-center gap-4 mb-6">
                 <FiAlertTriangle
                   size={42}
@@ -153,10 +152,10 @@ export default function OurStory() {
                   The <span className="text-red-600">Problem</span>
                 </h3>
               </div>
-              <p className="mb-6 mt-6 text-gray-700 text-lg font-light">
+              <p className="mb-6 mt-6 text-gray-700 text-lg font-light leading-relaxed">
                 Eating real food has become a luxury. From{" "}
-                <span className="text-red-600 font-thin">fake ketchup</span> to{" "}
-                <span className="text-red-600 font-thin">
+                <span className="text-red-600 font-light">fake ketchup</span> to{" "}
+                <span className="text-red-600 font-light">
                   adulterated spices
                 </span>
                 , our daily food is far from what it should be.
@@ -176,43 +175,34 @@ export default function OurStory() {
               </div>
             </div>
 
-            {/* Right Image */}
-            <div className="md:w-[55%] relative overflow-hidden">
-              <div className="relative w-full  md:h-[60vh]   rounded-tr-[30px] rounded-br-[30px] overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1920"
-                  alt="Modern Food Processing"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white text-lg p-4 text-center">
-                  Modern food processing has compromised quality
-                </div>
+            {/* Image (Problem) */}
+            <div className="md:w-[55%] w-full aspect-square md:aspect-auto md:h-[60vh] overflow-hidden relative rounded-tr-[40px] rounded-bl-[40px]">
+              <img
+                src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1920"
+                alt="Modern Food Processing"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white text-lg p-4 text-center">
+                Modern food processing has compromised quality
               </div>
             </div>
           </div>
 
-          {/* Second Card */}
-          <div className="flex flex-col md:flex-row items-center border-b border-gray-100  border-opacity-65 gap-4 max-w-6xl mx-auto rounded-2xl px-4 md:px-20 py-10">
-            {/* Left Image */}
-            <div className="md:w-[55%] relative overflow-hidden">
-              <div className="relative w-full h-full md:h-[60vh]  sm:aspect-video rounded-tr-[30px] rounded-br-[30px] overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1920"
-                  alt="Traditional Methods"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white text-lg p-4 text-center">
-                  Traditional methods preserved food quality
-                </div>
+          {/* Wake-Up Call */}
+          <div className="flex flex-col md:flex-row items-center gap-4 max-w-6xl mx-auto border-b border-dashed border-gray-300 py-10 px-4 md:px-20 rounded-2xl">
+            {/* Image (Wake-Up Call) */}
+            <div className="md:w-[55%] w-full aspect-square md:aspect-auto md:h-[60vh] overflow-hidden relative rounded-tr-[40px] rounded-bl-[40px]">
+              <img
+                src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?q=80&w=1920"
+                alt="Traditional Methods"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white text-lg p-4 text-center">
+                Traditional methods preserved food quality
               </div>
             </div>
 
-            {/* Right Text */}
-            <div className="md:w-[45%] px-6">
+            <div className="md:w-[45%] w-full px-6">
               <div className="flex items-center gap-4 mb-6">
                 <AiOutlineThunderbolt
                   size={42}
@@ -222,22 +212,24 @@ export default function OurStory() {
                   The <span className="text-yellow-500">Wake-Up Call</span>
                 </h3>
               </div>
-              <p className="mb-6 mt-6 text-gray-700 text-lg font-light">
+              <p className="mb-6 mt-6 text-gray-700 text-lg font-light leading-relaxed">
                 Health crises often serve as our wake-up calls. When{" "}
                 <span className="text-yellow-600">loved ones fall ill</span>, we
                 realize the true cost of compromising on food quality.
               </p>
-              <p className="bg-pink-100 bg-opacity-70 border-l-8 border-yellow-400 p-7 mt-8 rounded-l-3xl">
-                "No amount of money is too much when health is at stake. Yet, we
-                compromise daily on the quality of our food."
+              <p className="bg-pink-100 bg-opacity-70 border-l-8 border-yellow-400 p-7 mt-8 rounded-l-3xl italic text-gray-700 relative">
+                <span className="absolute -top-5 -left-3 text-yellow-400 text-4xl">
+                  “
+                </span>
+                No amount of money is too much when health is at stake. Yet, we
+                compromise daily on the quality of our food.
               </p>
             </div>
           </div>
 
-          {/* Third Card */}
-          <div className="flex flex-col md:flex-row items-center border-b border-gray-100  border-opacity-65 gap-4 max-w-6xl mx-auto rounded-2xl px-4 md:px-20 py-10">
-            {/* Left Text */}
-            <div className="md:w-[45%] px-6">
+          {/* Solution */}
+          <div className="flex flex-col md:flex-row items-center gap-4 max-w-6xl mx-auto border-b border-dashed border-gray-300 py-10 px-4 md:px-20 rounded-2xl">
+            <div className="md:w-[45%] w-full px-6">
               <div className="flex items-center gap-4 mb-6">
                 <FaRegCircleCheck
                   size={42}
@@ -247,7 +239,7 @@ export default function OurStory() {
                   Our <span className="text-green-500">Solution</span>
                 </h3>
               </div>
-              <p className="mb-6 mt-6 text-gray-700 text-lg font-light">
+              <p className="mb-6 mt-6 text-gray-700 text-lg font-light leading-relaxed">
                 We're bringing back{" "}
                 <span className="text-green-600 font-light">
                   traditional cold-pressed oils
@@ -270,19 +262,15 @@ export default function OurStory() {
               </div>
             </div>
 
-            {/* Right Image */}
-            <div className="md:w-[55%] relative overflow-hidden">
-              <div className="relative w-full h-full md:h-[60vh]  sm:aspect-video rounded-tr-[30px] rounded-br-[30px] overflow-hidden">
-                <img
-                  src="https://www.vedikaorganics.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1593179241557-bce1eb92e47e%3Fq%3D80%26w%3D2940&w=1920&q=75"
-                  alt="Organic Oils"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white text-lg p-4 text-center">
-                  Traditional methods preserve nutrients and authenticity
-                </div>
+            {/* Image (Solution) */}
+            <div className="md:w-[55%] w-full aspect-square md:aspect-auto md:h-[60vh] overflow-hidden relative rounded-tr-[40px] rounded-bl-[40px]">
+              <img
+                src="https://www.vedikaorganics.com/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1593179241557-bce1eb92e47e%3Fq%3D80%26w%3D2940&w=1920&q=75"
+                alt="Organic Oils"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-black/50 text-white text-lg p-4 text-center">
+                Traditional methods preserve nutrients and authenticity
               </div>
             </div>
           </div>

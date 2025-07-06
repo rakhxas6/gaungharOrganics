@@ -21,7 +21,7 @@ export default function VedikaLogin() {
   };
 
   return (
-    <div className="flex items-center justify-center bg-gray-50 px-4 py-10 sm:py-14 min-h-[60vh] sm:min-h-[85vh] md:min-h-[90vh]">
+    <div className="flex items-center justify-center bg-gray-50 px-4 py-10 sm:py-14 min-h-[70vh] sm:min-h-[85vh] md:min-h-[90vh]">
       <Toaster position="top-center" />
       <div className="w-full max-w-sm bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
         <div className="flex justify-center mb-4 mt-2">
