@@ -5,6 +5,7 @@ import DemoImage from "../../assets/images/Wood_Pressed_xe62sr.webp";
 import {
   removeFromCart,
   addToCart,
+  clearCart,
   increaseQuantity,
   decreaseQuantity,
 } from "../redux/cartSlice";
@@ -57,14 +58,20 @@ export default function Cart() {
   const [showWhatsAppModal, setShowWhatsAppModal] = useState(false);
 
   // WhatsApp order message
-  const whatsappMessage = encodeURIComponent(
-    `Hello! I would like to place an order:\n\n${cartItems
+  const whatsappMessage = encodeURIComponent(`
+     Hello! I would like to place an order:
+    
+    ${cartItems
       .map(
         (item) =>
           `- ${item.title} (${item.selectedSize}): ${item.quantity} pcs, रु ${item.totalPrice}`
       )
-      .join("\n")}\n\nTotal: रु ${totalPrice}\n\nPlease confirm. Thank you!`
-  );
+      .join("\n")}
+    
+    Total: रु ${totalPrice}
+    
+    Please confirm. Thank you!
+    `);
 
   // Replace with your WhatsApp phone number with country code, no plus sign, e.g. 9779812345678
   const whatsappNumber = "9779867925779";
@@ -381,7 +388,7 @@ export default function Cart() {
         <div className="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center px-4">
           <div className="bg-white rounded-2xl p-8 w-full max-w-md shadow-xl relative text-center">
             <button
-              className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-2xl font-bold"
+              className="absolute top-2 right-5 text-gray-500 hover:text-red-500 text-3xl font-bold"
               onClick={() => setShowWhatsAppModal(false)}
               aria-label="Close modal"
             >
@@ -398,6 +405,7 @@ export default function Cart() {
             </p>
 
             <a
+              onClick={() => dispatch(clearCart())}
               href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`}
               target="_blank"
               rel="noopener noreferrer"
