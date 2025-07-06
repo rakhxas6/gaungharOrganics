@@ -25,7 +25,7 @@ import Shop from "./components/shop/Shop.jsx";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col overflow-x-hidden">
         <Header />
         <main className="flex-grow">
           <Routes>
