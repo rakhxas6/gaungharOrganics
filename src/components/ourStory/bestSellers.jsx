@@ -52,27 +52,29 @@ export default function BestSellers() {
       </div>
 
       {/* Product Cards */}
-      <div className="cardWrapper flex flex-wrap gap-5 px-6 md:px-0">
+      <div className="cardWrapper flex flex-wrap gap-3 sm:gap-5">
         {products.map((product) => (
           <div
             key={product.id}
-            className="card w-full sm:w-[48%] lg:w-[31%] bg-white  rounded-xl overflow-hidden transform transition-transform duration-300  "
+            className="card w-full sm:w-[48%] lg:w-[31%] bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300"
           >
             <img
               src={product.image}
               alt={product.title}
-              className="w-full md:hover:scale-105"
+              className="w-full transition-transform duration-300 hover:scale-105"
             />
+
             <div className="p-4">
-              <div className="flex items-center mb-4">
+              <div className="flex items-center mb-3">
                 <span className="text-yellow-500 mr-2">
                   <FaStar />
                 </span>
-                <span className="text-gray-600">
+                <span className="text-gray-600 text-sm">
                   {product.rating} ({product.reviews} reviews)
                 </span>
               </div>
-              <h2 className="text-lg font-light text-green-800 mb-2">
+
+              <h2 className="text-lg font-light text-green-800 mb-2 line-clamp-2">
                 {product.title}
               </h2>
 
@@ -86,20 +88,16 @@ export default function BestSellers() {
                   </span>
                 </div>
                 <button
-                  onClick={() => {
-                    // ✅ debug
-                    dispatch(addToCart(product));
-                  }}
-                  className="flex items-center border border-gray-400 px-3 py-1 rounded-md hover:bg-green-500 hover:border-0 hover:text-white transition duration-400"
+                  onClick={() => dispatch(addToCart(product))}
+                  className="flex items-center border border-green-500 text-green-700 px-3 py-1.5 rounded-md hover:bg-green-500 hover:text-white transition duration-300"
                 >
-                  Add
-                  <FaShoppingCart className="ml-1" />
+                  Add <FaShoppingCart className="ml-2" />
                 </button>
               </div>
 
-              <span className="shipping sm:text-sm text-xs text-gray-500 mb-3 block">
+              <ul className="text-xs sm:text-sm text-gray-500 list-disc list-inside">
                 <li>Free shipping (Only Butwal)</li>
-              </span>
+              </ul>
             </div>
           </div>
         ))}
