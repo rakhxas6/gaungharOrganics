@@ -54,7 +54,7 @@ export default function Header() {
           <a href="/our-story" className="hover:text-green-600 transition">
             Our Story
           </a>
-          <a href="/our-story" className="hover:text-green-600 transition">
+          <a href="/our-values" className="hover:text-green-600 transition">
             Our Values
           </a>
         </nav>
@@ -72,7 +72,7 @@ export default function Header() {
             className="relative cursor-pointer"
             onClick={() => navigate("/cart")}
           >
-            <HiOutlineShoppingCart size={24} className="text-green-800" />
+            <HiOutlineShoppingCart size={24} />
             {totalQuantity > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 {totalQuantity}
@@ -113,10 +113,7 @@ export default function Header() {
           >
             Our Story
           </a>
-          <a
-            href="/"
-            className="block text-gray-700 hover:text-green-600"
-          >
+          <a href="/" className="block text-gray-700 hover:text-green-600">
             Our Values
           </a>
         </div>

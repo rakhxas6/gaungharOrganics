@@ -21,6 +21,7 @@ import Partners from "./components/ourStory/partners";
 import PaymentSuccess from "./components/payment/PaymentSuccess";
 import Cart from "./components/shop/Cart.jsx";
 import Shop from "./components/shop/Shop.jsx";
+import OurValues from "./components/ourStory/OurValues.jsx";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/our-story" element={<OurStory />} />
+            <Route path="/our-values" element={<OurValues />} />
             <Route
               path="/shop/organic-cold-pressed-mustard-oil"
               element={<DetailsPage />}
