@@ -113,7 +113,7 @@ export default function Header() {
           >
             Our Story
           </a>
-          <a href="/" className="block text-gray-700 hover:text-green-600">
+          <a href="/our-values" className="block text-gray-700 hover:text-green-600">
             Our Values
           </a>
         </div>
