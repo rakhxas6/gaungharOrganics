@@ -3,11 +3,7 @@
 @tailwind utilities;
 
 
-body,
-html {
-    overflow-x: hidden;
-    height: 100%;
-}
+
 
 /* Remove spinner arrows from input[type=number] for Chrome, Safari, Edge */
 input[type="number"]::-webkit-inner-spin-button,
