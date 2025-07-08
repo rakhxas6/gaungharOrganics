@@ -27,21 +27,22 @@ const cartSlice = createSlice({
     addToCart(state, action) {
       const item = action.payload;
 
-      // Find existing item by id AND selectedSize
       const existingItem = state.cartItems.find(
         (i) => i.id === item.id && i.selectedSize === item.selectedSize
       );
 
       if (existingItem) {
-        existingItem.quantity++;
-        existingItem.totalPrice += item.price;
+        existingItem.quantity += item.quantity; 
+        existingItem.totalPrice += item.price * item.quantity; 
       } else {
-        state.cartItems.push({ ...item, quantity: 1, totalPrice: item.price });
+        state.cartItems.push({
+          ...item,
+          totalPrice: item.price * item.quantity, 
+        });
       }
 
       recalculateTotals(state);
     },
-
     removeFromCart(state, action) {
       const { id, selectedSize } = action.payload;
 

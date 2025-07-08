@@ -16,36 +16,9 @@ import KhaltiLogo from "../../assets/images/KhaltiLogo.webp";
 import EsewaLogo from "../../assets/images/EsewaLogo.webp";
 import { FaPlus, FaMinus } from "react-icons/fa";
 import { FaTruck, FaSmile, FaShieldAlt } from "react-icons/fa";
+import {benefits,products} from "../../data/products"
+import YouMayAlsoLike from "./YouMayAlsoLike";
 
-const benefits = [
-  {
-    icon: <FaTruck size={16} className="text-green-600" />,
-    title: "Free Delivery",
-    subtitle: "On all orders",
-  },
-  {
-    icon: <FaSmile size={16} className="text-green-600" />,
-    title: "100% Satisfaction",
-    subtitle: "30-day money back",
-  },
-  {
-    icon: <FaShieldAlt size={16} className="text-green-600" />,
-    title: "Secure Checkout",
-    subtitle: "256-bit SSL encryption",
-  },
-];
-
-const products = [
-  {
-    id: 1,
-    title: "Wood Pressed Groundnut Oil (1 litre)",
-    price: 380,
-    originalPrice: 300,
-    image: DemoImage,
-    rating: 4.8,
-    reviews: 150,
-  },
-];
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -130,11 +103,11 @@ export default function Cart() {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-36 h-36 object-cover border rounded-lg"
+                className="w-36 h-36 object-center border rounded-lg"
               />
               <div className="flex-1 w-full">
                 <h3 className="text-lg font-semibold text-green-800">
-                  {item.title}
+                  {item.title} ({item.selectedSize})
                 </h3>
                 <div className="flex items-center gap-3 mt-2">
                   <button
@@ -255,59 +228,8 @@ export default function Cart() {
       </div>
 
       {/* You May Also Like */}
-
-      <div className=" px-4 w-full flex flex-col items-center mt-4">
-        {/* Section Title */}
-        <div className="mb-12">
-          <span className="flex items-center text-sm sm:text-base text-gray-600 bg-gray-300 bg-opacity-30 justify-center gap-2 px-6 py-2 rounded-full border border-gray-300 shadow-sm">
-            You May Also Like
-          </span>
-        </div>
-
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl w-full">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden "
-            >
-              {/* Product Image */}
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full object-cover"
-              />
-
-              {/* Card Content */}
-              <div className="p-4">
-                <div className="flex items-center mb-1">
-                  <FaStar className="text-yellow-500 mr-1" />
-                  <span className="text-gray-600 text-sm">
-                    {product.rating}
-                  </span>
-                </div>
-
-                <h3 className="text-lg font-semibold text-green-800 mb-2 line-clamp-2">
-                  {product.title}
-                </h3>
-
-                <div className="flex items-center justify-between">
-                  <div className="text-green-700 font-semibold text-lg">
-                    रु {product.price}
-                  </div>
-
-                  <button
-                    onClick={() => dispatch(addToCart(product))}
-                    className="px-3 py-1.5 flex items-center gap-2 border border-gray-300 rounded-md hover:bg-green-500 hover:text-white transition text-sm"
-                  >
-                    <FaShoppingCart /> Add
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+<YouMayAlsoLike/>
+      
 
       {/* Payment Modal */}
       {/* {showPaymentModal && !paymentMethod && ( 

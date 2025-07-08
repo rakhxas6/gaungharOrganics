@@ -17,33 +17,34 @@ import {
   MdAccessTimeFilled,
   MdLocationPin,
 } from "react-icons/md";
+import Newsletter from "./NewsLetter";
 
 const Contact = () => {
-  const form = useRef();
-  const [message, setMessage] = useState(null);
+  // const form = useRef();
+  // const [message, setMessage] = useState(null);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_7xdr5ff", // replace with your EmailJS service ID
-        "template_y213bwv", // replace with your EmailJS template ID
-        form.current,
-        "Gtqw3gCWMS92iu-ew" // replace with your EmailJS public key
-      )
-      .then(
-        (result) => {
-            toast.success("Thanks for subscribing! 🎉");
-          form.current.reset();
-          setTimeout(() => setMessage(null), 4000);
-        },
-        (error) => {
-            toast.error("Something went wrong. Please try again.");
-          setTimeout(() => setMessage(null), 4000);
-        }
-      );
-  };
+  //   emailjs
+  //     .sendForm(
+  //       "service_7xdr5ff", // replace with your EmailJS service ID
+  //       "template_y213bwv", // replace with your EmailJS template ID
+  //       form.current,
+  //       "Gtqw3gCWMS92iu-ew" // replace with your EmailJS public key
+  //     )
+  //     .then(
+  //       (result) => {
+  //           toast.success("Thanks for subscribing! 🎉");
+  //         form.current.reset();
+  //         setTimeout(() => setMessage(null), 4000);
+  //       },
+  //       (error) => {
+  //           toast.error("Something went wrong. Please try again.");
+  //         setTimeout(() => setMessage(null), 4000);
+  //       }
+  //     );
+  // };
 
   return (
     <section className="bg-white">
@@ -162,6 +163,23 @@ const Contact = () => {
             </p>
 
             <div className="buttons flex flex-col gap-4">
+              {/* Twitter */}
+              <a
+                href="https://twitter.com/gaungharorg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between px-6 py-4 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition duration-200"
+              >
+                <div className="flex items-center gap-3">
+                  <FaTwitter size={24} />
+                  <div className="flex flex-col leading-tight">
+                    <span className="font-semibold">Twitter</span>
+                    <span className="text-sm text-gray-600">@gaungharorg</span>
+                  </div>
+                </div>
+                <FaArrowRight className="text-blue-600" />
+              </a>
+
               {/* Instagram */}
               <a
                 href="https://www.instagram.com/gaungharorganics"
@@ -179,23 +197,6 @@ const Contact = () => {
                   </div>
                 </div>
                 <FaArrowRight className="text-pink-600" />
-              </a>
-
-              {/* Twitter */}
-              <a
-                href="https://twitter.com/gaungharorg"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between px-6 py-4 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition duration-200"
-              >
-                <div className="flex items-center gap-3">
-                  <FaTwitter size={24} />
-                  <div className="flex flex-col leading-tight">
-                    <span className="font-semibold">Twitter</span>
-                    <span className="text-sm text-gray-600">@gaungharorg</span>
-                  </div>
-                </div>
-                <FaArrowRight className="text-blue-600" />
               </a>
 
               {/* Facebook */}
@@ -267,7 +268,8 @@ const Contact = () => {
           </div>
         </div>
         {/* Newsletter Section */}
-        <div className="newsletter bg-green-50 py-12 px-6 mt-12">
+        <Newsletter/>
+        {/* <div className="newsletter bg-green-50 py-12 px-6 mt-12">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-green-700 mb-4">
               Join Our Newsletter
@@ -303,7 +305,7 @@ const Contact = () => {
               </p>
             )}
           </div>
-        </div>
+        </div> */}
         <Toaster position="top-center" reverseOrder={false} />
       </div>
     </section>

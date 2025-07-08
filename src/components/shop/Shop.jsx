@@ -1,29 +1,11 @@
 import React, { useState } from "react";
 import { RiStarFill } from "react-icons/ri";
 import { GoArrowUpRight } from "react-icons/go";
-import DemoImg from "../../assets/images/Wood_Pressed_xe62sr.webp";
 import FAQ from "../footer/faq";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
-import DemoProduct from "../../assets/images/Wood_Pressed_xe62sr.webp"
-
-// Product data
-const products = [
-  {
-    id: 1,
-    title: "Organic Cold Pressed Mustard Oil",
-    basePrice: 250,
-    totalReviews: 120,
-    rating: 4.5,
-    image: DemoProduct,
-    pricesBySize: {
-      "1 litre": 380,
-      "500 ml": 200,
-      "5 litre": 1950,
-    },
-  },
-];
+import { products } from "../../data/products";
 
 // Slugify for URLs
 const toSlug = (text) =>
@@ -36,22 +18,27 @@ const Shop = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // Initialize selected size as "1 Litre" for each product (case-insensitive match)
   const [selectedSizes, setSelectedSizes] = useState(
     products.reduce((acc, product) => {
-      acc[product.id] = "1 litre";
+      // Find "1 Litre" size if exists, else first size label
+      const defaultSizeObj =
+        product.sizes.find((s) => s.label.toLowerCase() === "1 litre") ||
+        product.sizes[0];
+      acc[product.id] = defaultSizeObj.label;
       return acc;
     }, {})
   );
 
-  const handleSizeClick = (productId, size) => {
+  const handleSizeClick = (productId, sizeLabel) => {
     setSelectedSizes((prev) => ({
       ...prev,
-      [productId]: size,
+      [productId]: sizeLabel,
     }));
   };
 
-  const clickHandler = (title) => {
-    navigate(`/shop/${toSlug(title)}`);
+  const clickHandler = (product) => {
+    navigate(`/product/${product.id}`);
   };
 
   return (
@@ -73,10 +60,14 @@ const Shop = () => {
       </div>
 
       {/* Product Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-0  justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-0 justify-center">
         {products.map((p) => {
-          const selectedSize = selectedSizes[p.id];
-          const price = p.pricesBySize[selectedSize] ?? p.basePrice;
+          // Find selected size object from sizes array
+          const selectedSizeLabel = selectedSizes[p.id];
+          const selectedSize =
+            p.sizes.find(
+              (s) => s.label.toLowerCase() === selectedSizeLabel.toLowerCase()
+            ) || p.sizes[0];
 
           return (
             <div
@@ -86,7 +77,7 @@ const Shop = () => {
               {/* Image */}
               <div className="flex-shrink-0 w-full sm:w-[185px] h-[280px] rounded-xl overflow-hidden border border-gray-100 mx-auto sm:mx-0">
                 <img
-                  src={DemoImg}
+                  src={p.image}
                   alt={p.title}
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
@@ -97,7 +88,7 @@ const Shop = () => {
                 {/* Title & Rating */}
                 <div>
                   <button
-                    onClick={() => clickHandler(p.title)}
+                    onClick={() => clickHandler(p)}
                     className="text- font-semibold text-green-800 mb-3 hover:underline flex items-center gap-1"
                   >
                     {p.title}
@@ -108,23 +99,23 @@ const Shop = () => {
                       ★★★★★
                     </span>
                     <p className="font-semibold text-sm mt-1">
-                      {p.rating} ({p.totalReviews})
+                      {p.rating} ({p.reviews})
                     </p>
                   </div>
 
                   {/* Size Selection */}
                   <div className="flex gap-2 flex-wrap mb-4">
-                    {Object.keys(p.pricesBySize).map((size) => (
+                    {p.sizes.map((size) => (
                       <button
-                        key={size}
-                        onClick={() => handleSizeClick(p.id, size)}
+                        key={size.label}
+                        onClick={() => handleSizeClick(p.id, size.label)}
                         className={`px-4 py-1 rounded-full text-sm font-medium transition ${
-                          selectedSize === size
+                          selectedSize.label === size.label
                             ? "bg-green-700 text-white"
                             : "bg-gray-100 text-gray-700 hover:bg-green-100"
                         }`}
                       >
-                        {size}
+                        {size.label}
                       </button>
                     ))}
                   </div>
@@ -134,12 +125,17 @@ const Shop = () => {
                 <div>
                   <p className="text-2xl font-medium text-green-800 mb-4">
                     <span className="font-semibold">रु </span>
-                    {price}/-
+                    {selectedSize.price}/-
+                    {selectedSize.originalPrice && (
+                      <span className="ml-2 text-gray-400 line-through">
+                        रु {selectedSize.originalPrice}
+                      </span>
+                    )}
                   </p>
 
                   <div className="flex gap-4">
                     <button
-                      onClick={() => clickHandler(p.title)}
+                      onClick={() => clickHandler(p)}
                       className="flex-1 text-center border border-gray-300 text-gray-700 py-2 rounded-lg hover:text-black hover:border-gray-500 transition font-medium"
                     >
                       Open
@@ -148,9 +144,13 @@ const Shop = () => {
                       onClick={() => {
                         dispatch(
                           addToCart({
-                            ...p,
-                            price: price,
-                            selectedSize: selectedSize,
+                            id: p.id,
+                            title: p.title,
+                            image: p.image,
+                            selectedSize: selectedSize.label,
+                            price: selectedSize.price,
+                            quantity: 1,
+                            totalPrice: selectedSize.price,
                           })
                         );
                       }}

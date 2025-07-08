@@ -1,29 +1,11 @@
-import React from "react";
-import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { BiSolidBookBookmark } from "react-icons/bi";
-import { FaTruck, FaShieldAlt, FaSmile } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { benefits } from "../../data/products";
 
 const EmptyCart = () => {
   const navigate = useNavigate();
-  const benefits = [
-    {
-      icon: <FaTruck size={16} className="text-green-600" />,
-      title: "Free Delivery",
-      subtitle: "On all orders",
-    },
-    {
-      icon: <FaSmile size={16} className="text-green-600" />,
-      title: "100% Satisfaction",
-      subtitle: "30-day money back",
-    },
-    {
-      icon: <FaShieldAlt size={16} className="text-green-600" />,
-      title: "Secure Checkout",
-      subtitle: "256-bit SSL encryption",
-    },
-  ];
+  
 
   const handleBrowseProducts = () => {
     navigate("/shop");

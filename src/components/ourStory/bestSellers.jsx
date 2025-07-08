@@ -1,23 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaStar, FaLongArrowAltRight, FaShoppingCart } from "react-icons/fa";
-import DemoImage from "../../assets/images/Wood_Pressed_xe62sr.webp";
+
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import { products } from "../../data/products";
 
 export default function BestSellers() {
   const dispatch = useDispatch();
-
-  const products = [
-    {
-      id: 1,
-      title: "Wood Pressed Groundnut Oil (1 litre)",
-      price: 250,
-      originalPrice: 300,
-      image: DemoImage,
-      rating: 4.8,
-      reviews: 150,
-    },
-  ];
 
   return (
     <div className="bestSellerSection max-w-6xl mx-auto min-h-fit px-6 py-12 bg-white">
@@ -53,54 +43,86 @@ export default function BestSellers() {
 
       {/* Product Cards */}
       <div className="cardWrapper flex flex-wrap gap-3 sm:gap-5">
-        {products.map((product) => (
-          <div
-            key={product.id}
-            className="card w-full sm:w-[48%] lg:w-[31%] bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300"
-          >
-            <img
-              src={product.image}
-              alt={product.title}
-              className="w-full transition-transform duration-300 hover:scale-105"
-            />
+        {products.map((product) => {
+          const oneLitre =
+            product.sizes?.find((s) => s.label === "1 Litre") ||
+            product.sizes?.[0];
 
-            <div className="p-4">
-              <div className="flex items-center mb-3">
-                <span className="text-yellow-500 mr-2">
-                  <FaStar />
-                </span>
-                <span className="text-gray-600 text-sm">
-                  {product.rating} ({product.reviews} reviews)
-                </span>
-              </div>
+          return (
+            <div
+              key={product.id}
+              className="card w-full sm:w-[48%] lg:w-[31%] bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition-all duration-300"
+            >
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-full transition-transform duration-300 hover:scale-105"
+              />
 
-              <h2 className="text-lg font-light text-green-800 mb-2 line-clamp-2">
-                {product.title}
-              </h2>
-
-              <div className="flex items-center justify-between font-light mb-2">
-                <div className="price">
-                  <span className="text-green-800 font-semibold text-2xl">
-                    रु {product.price}
+              <div className="p-4">
+                {/* Rating */}
+                <div className="flex items-center mb-3">
+                  <span className="text-yellow-500 mr-2">
+                    <FaStar />
                   </span>
-                  <span className="text-gray-500 line-through ml-2">
-                    रु {product.originalPrice}
+                  <span className="text-gray-600 text-sm">
+                    {product.rating} ({product.reviews} reviews)
                   </span>
                 </div>
-                <button
-                  onClick={() => dispatch(addToCart(product))}
-                  className="flex items-center border border-green-500 text-green-700 px-3 py-1.5 rounded-md hover:bg-green-500 hover:text-white transition duration-300"
-                >
-                  Add <FaShoppingCart className="ml-2" />
-                </button>
-              </div>
 
-              <ul className="text-xs sm:text-sm text-gray-500 list-disc list-inside">
-                <li>Free shipping (Only Butwal)</li>
-              </ul>
+                {/* Title + View Details */}
+                <div className="details flex items-center justify-between mb-2 line-clamp-2">
+                  <h2 className="text-lg font-light text-green-800">
+                    {product.title} {'- '} ({oneLitre.label})
+                  </h2>
+
+                  <Link
+                    to={`/product/${product.id}`}
+                    className="hover:underline text-[14px] font-light"
+                  >
+                    View Details
+                  </Link>
+                </div>
+
+                {/* Price + Add to Cart */}
+                <div className="flex items-center justify-between font-light mb-2">
+                  <div className="price">
+                    <span className="text-green-800 font-semibold text-2xl">
+                      रु {oneLitre?.price}
+                    </span>
+                    {oneLitre?.originalPrice && (
+                      <span className="text-gray-500 line-through ml-2">
+                        रु {oneLitre.originalPrice}
+                      </span>
+                    )}
+                  </div>
+
+                  <button
+                    onClick={() =>
+                      dispatch(
+                        addToCart({
+                          ...product,
+                          selectedSize: oneLitre.label,
+                          price: oneLitre.price,
+                          quantity: 1,
+                          totalPrice: oneLitre.price,
+                        })
+                      )
+                    }
+                    className="flex items-center border border-green-500 text-green-700 px-3 py-1.5 rounded-md hover:bg-green-500 hover:text-white transition duration-300"
+                  >
+                    Add <FaShoppingCart className="ml-2" />
+                  </button>
+                </div>
+
+                {/* Extra Info */}
+                <ul className="text-xs sm:text-sm text-gray-500 list-disc list-inside">
+                  <li>Free shipping (Only Butwal)</li>
+                </ul>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* View All Button (Visible on small screens) */}

@@ -46,7 +46,7 @@ export default function Header() {
             Shop
           </a>
           <a href="/contact" className="hover:text-green-600 transition">
-            Contact Us
+            Contact
           </a>
           <a href="/blog" className="hover:text-green-600 transition">
             Blog
@@ -102,7 +102,7 @@ export default function Header() {
             href="/contact"
             className="block text-gray-700 hover:text-green-600"
           >
-            Contact Us
+            Contact
           </a>
           <a href="/blog" className="block text-gray-700 hover:text-green-600">
             Blog

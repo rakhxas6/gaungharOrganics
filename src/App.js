@@ -22,10 +22,12 @@ import PaymentSuccess from "./components/payment/PaymentSuccess";
 import Cart from "./components/shop/Cart.jsx";
 import Shop from "./components/shop/Shop.jsx";
 import OurValues from "./components/ourStory/OurValues.jsx";
+import ScrollToTop from "./ScrollToTop.jsx";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col overflow-x-hidden">
         <Header />
         <main className="flex-grow">
@@ -51,10 +53,7 @@ function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/our-story" element={<OurStory />} />
             <Route path="/our-values" element={<OurValues />} />
-            <Route
-              path="/shop/organic-cold-pressed-mustard-oil"
-              element={<DetailsPage />}
-            />
+            <Route path="/product/:id" element={<DetailsPage />} />
             <Route path="/*" element={<ErrorPage />} />
           </Routes>
         </main>
