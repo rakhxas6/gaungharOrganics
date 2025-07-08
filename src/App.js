@@ -23,6 +23,7 @@ import Cart from "./components/shop/Cart.jsx";
 import Shop from "./components/shop/Shop.jsx";
 import OurValues from "./components/ourStory/OurValues.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
+import BlogFullPage from "./components/blog/BlogFullPage.jsx";
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogFullPage />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/our-story" element={<OurStory />} />
             <Route path="/our-values" element={<OurValues />} />

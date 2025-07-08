@@ -13,7 +13,7 @@ export default function ScrollToTop() {
       document.documentElement;
 
     if (scrollContainer) {
-      scrollContainer.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      scrollContainer.scrollTo({ top: 0, left: 0, behavior: "smooth" });
     }
   }, [location.pathname]);
 

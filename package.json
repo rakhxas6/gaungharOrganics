@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "aos": "^2.3.4",
     "crypto-js": "^4.2.0",
     "khalti-checkout-web": "^2.2.0",
     "otp-generator": "^4.0.1",
