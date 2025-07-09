@@ -29,6 +29,11 @@ export default function Header() {
     AOS.init({ duration: 500, once: true });
   }, []);
   
+  
+  useEffect(() => {
+    document.body.style.overflow = menuOpen && !closing ? "hidden" : "auto";
+  }, [menuOpen, closing]);
+  
 
   const handleClick = () => {
     navigate("/");
