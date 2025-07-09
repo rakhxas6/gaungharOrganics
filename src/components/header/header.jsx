@@ -131,6 +131,7 @@ export default function Header() {
             className="absolute top-4 right-4 text-gray-700"
             aria-label="Close Menu"
           >
+<<<<<<< HEAD
             <HiX size={26} />
           </button>
 
@@ -182,6 +183,22 @@ export default function Header() {
               </a>
             </nav>
           </div>
+=======
+            Contact
+          </a>
+          <a href="/blog" className="block text-gray-700 hover:text-green-600">
+            Blog
+          </a>
+          <a
+            href="/our-story"
+            className="block text-gray-700 hover:text-green-600"
+          >
+            Our Story
+          </a>
+          <a href="/our-values" className="block text-gray-700 hover:text-green-600">
+            Our Values
+          </a>
+>>>>>>> e64a786b45e9243877fe6cb3d72c349f7ba52fd0
         </div>
       )}
     </header>
