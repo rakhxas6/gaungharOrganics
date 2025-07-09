@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { cards, core } from "../../data/products";
+import NewsLetter from "../contact/NewsLetter"
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -138,6 +139,9 @@ const OurValues = () => {
           Get Involved
         </button>
       </section>
+
+    {/* NewaLetterSection */}  
+    <NewsLetter/>
     </div>
   );
 };

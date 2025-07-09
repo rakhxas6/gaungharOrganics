@@ -1,23 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import {
   HiOutlineMenuAlt3,
   HiOutlineShoppingCart,
   HiOutlineUser,
   HiX,
+  HiOutlineShoppingBag,
+  HiOutlinePhone,
+  HiOutlineNewspaper,
+  HiOutlineBookOpen,
+  HiOutlineHeart,
 } from "react-icons/hi";
 import LogoEnglish from "../../assets/images/cropped img.png";
 import nameOnly from "../../assets/images/nameOnly.png";
+import nepaliLogo from "../../assets/images/croppedNepali.png";
 import Tagline from "./Tagline";
 import { useNavigate } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Header() {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    AOS.init({ duration: 500, once: true });
+  }, []);
+  
 
   const handleClick = () => {
     navigate("/");
+  };
+
+  const handleCloseMenu = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+      setClosing(false);
+    }, 200); 
   };
 
   return (
@@ -94,28 +116,67 @@ export default function Header() {
 
       {/* Mobile navigation menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-white px-6 py-4 space-y-4 shadow-md">
-          <a href="/shop" className="block text-gray-700 hover:text-green-600">
-            Shop
-          </a>
-          <a
-            href="/contact"
-            className="block text-gray-700 hover:text-green-600"
+        <div
+          className={`lg:hidden fixed top-0 right-0 h-full w-[50%] bg-green-100 z-50 shadow-lg p-6 transform transition-transform duration-300 ease-in-out
+      ${closing ? "translate-x-full" : "translate-x-0"}`}
+        >
+          {/* Close Button */}
+          <button
+            onClick={handleCloseMenu}
+            className="absolute top-4 right-4 text-gray-700"
+            aria-label="Close Menu"
           >
-            Contact
-          </a>
-          <a href="/blog" className="block text-gray-700 hover:text-green-600">
-            Blog
-          </a>
-          <a
-            href="/our-story"
-            className="block text-gray-700 hover:text-green-600"
-          >
-            Our Story
-          </a>
-          <a href="/" className="block text-gray-700 hover:text-green-600">
-            Our Values
-          </a>
+            <HiX size={26} />
+          </button>
+
+          {/* Logo and Navigation Vertically Aligned */}
+          <div className="flex flex-col items-start mt-12 space-y-6 cursor-pointer">
+            <div onClick={handleClick}>
+              <img
+                src={nepaliLogo}
+                alt="GaunGhar Logo Nepali Version"
+                className="h-24 w-24 object-cover"
+              />
+            </div>
+
+            <nav className="space-y-4 w-full">
+              <a
+                href="/shop"
+                className="flex items-center gap-2 text-gray-700 hover:text-green-600"
+              >
+                <HiOutlineShoppingBag size={20} />
+                Shop
+              </a>
+              <a
+                href="/contact"
+                className="flex items-center gap-2 text-gray-700 hover:text-green-600"
+              >
+                <HiOutlinePhone size={20} />
+                Contact
+              </a>
+              <a
+                href="/blog"
+                className="flex items-center gap-2 text-gray-700 hover:text-green-600"
+              >
+                <HiOutlineNewspaper size={20} />
+                Blog
+              </a>
+              <a
+                href="/our-story"
+                className="flex items-center gap-2 text-gray-700 hover:text-green-600"
+              >
+                <HiOutlineBookOpen size={20} />
+                Our Story
+              </a>
+              <a
+                href="/our-values"
+                className="flex items-center gap-2 text-gray-700 hover:text-green-600"
+              >
+                <HiOutlineHeart size={20} />
+                Our Values
+              </a>
+            </nav>
+          </div>
         </div>
       )}
     </header>

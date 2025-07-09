@@ -19,14 +19,14 @@ export default function Footer() {
         {/* Left Section */}
         <div className="flex-1 flex flex-col gap-6">
           {/* Logo and Promo */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1 md:gap-4">
             <img
               src={LogoNepali}
               alt="Logo of GauGhar"
               className=" w-24 h-24 md:w-32 md:h-32 object-contain"
             />
             <div>
-              <h2 className=" text-3xl md:text-4xl font-thin mb-4">
+              <h2 className=" text-2xl md:text-4xl font-thin mb-4">
                 From Our Village To Your Kitchen!
               </h2>
               <p className="text-gray-600 text-sm">

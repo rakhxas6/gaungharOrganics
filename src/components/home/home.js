@@ -22,7 +22,7 @@ export default function Home() {
   };
 
   return (
-    <div className="mainContent min-h-[85vh] flex flex-col lg:flex-row justify-between items-center px-6 md:px-6 lg:px-16 pt-6 gap-1 border-b border-gray-400 border-opacity-60 ">
+    <div className="mainContent min-h-[85vh] flex flex-col lg:flex-row justify-between items-center px-6 md:px-6 lg:px-16 pt-6 gap-1 border-b border-gray-400 border-opacity-60 mt-4 md:mt-0">
       {/* Left Side Content */}
       <div className="left w-full lg:w-[40vw] flex flex-col gap-2 order-2 lg:order-1 mb-2">
         {/* Tagline Button */}
@@ -34,17 +34,20 @@ export default function Home() {
         </div>
 
         {/* Heading and Description */}
-        <div className="infoContainer">
-          <h2 className="text-2xl md:text-3xl text-green-600 font-bold mb-4 leading-snug">
-            Discover the Pure Essence of Traditional Oil Making
-          </h2>
-          <p className="text-gray-600 text-sm md:text-xl mb-4">
-            Experience the authentic taste and health benefits of traditionally
-            crafted wood-pressed oils, made with care from organic seeds.
-          </p>
+        <div className="infoContainer mt-2 md:mt-4">
+          <div className="textWrapper mb-2 md:mb-4">
+            <h2 className="text-2xl md:text-4xl text-green-600 font-serif mb-2 md:mb-4  leading-snug">
+              Discover the Pure Essence of Traditional Oil Making
+            </h2>
+            <p className="text-gray-600 text-mono text-sm md:text-xl mb-2 md:mb-4">
+              Experience the authentic taste and health benefits of
+              traditionally crafted wood-pressed oils, made with care from
+              organic seeds.
+            </p>
+          </div>
 
           {/* CTA Buttons */}
-          <div className="buttons flex gap-4 mt-2 flex-wrap">
+          <div className="buttons flex md:gap-4 gap-2 mt-2 md:mt-4 flex-row">
             <button
               onClick={handleClick}
               className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 transition"
@@ -60,7 +63,7 @@ export default function Home() {
           </div>
 
           {/* Trusted Section with Avatars */}
-          <div className="trustedBy mt-4 flex items-center gap-4 flex-wrap">
+          <div className="trustedBy mt-2 md:mt-4 flex items-center gap-4 flex-wrap">
             {/* Avatars */}
             <div className="flex -space-x-3">
               {avatarImages.map((img, i) => (
