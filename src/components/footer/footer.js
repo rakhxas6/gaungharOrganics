@@ -98,7 +98,7 @@ export default function Footer() {
           </li>
           <li className="flex items-center gap-1">
             <FaCopyright size={14} />
-            <span>GauGhar - All Rights Reserved!</span>
+            <span>GaunGhar Organic   - All Rights Reserved!</span>
           </li>
           <li>
             <a href="/terms-of-service" className="hover:underline">
