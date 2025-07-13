@@ -2,38 +2,14 @@ import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import { RiQuestionnaireLine } from "react-icons/ri";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { inquiries} from "../../data/products.js"
 
-const inquiries = [
-  {
-    question: "What are the benefits of using organic mustard oil?",
-    answer:
-      "Organic mustard oil is rich in antioxidants and omega-3 fatty acids, which help improve heart health, boost immunity, and provide natural anti-inflammatory properties.",
-  },
-  {
-    question: "Is cold pressed coconut oil better than refined coconut oil?",
-    answer:
-      "Yes, cold pressed coconut oil retains more nutrients and natural flavor because it’s extracted without heat, unlike refined oils that lose some beneficial compounds during processing.",
-  },
-  {
-    question: "Is cold pressed coconut oil better than refined coconut oil?",
-    answer:
-      "Yes, cold pressed coconut oil retains more nutrients and natural flavor because it’s extracted without heat, unlike refined oils that lose some beneficial compounds during processing.",
-  },
-  {
-    question: "How should I store herbal ghee to keep it fresh?",
-    answer:
-      "Store herbal ghee in an airtight container at room temperature, away from direct sunlight. Properly stored, it can last several months without refrigeration.",
-  },
-  {
-    question: "How should I store herbal ghee to keep it fresh?",
-    answer:
-      "Store herbal ghee in an airtight container at room temperature, away from direct sunlight. Properly stored, it can last several months without refrigeration.",
-  },
-];
+
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
   // const navigate = useNavigate()
+  
 
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);

@@ -2,38 +2,9 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { partners } from "../../data/products";
 
-const partners = [
-  {
-    name: "Apple",
-    tagline: "Think Different",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-  },
-  {
-    name: "Nike",
-    tagline: "Just Do It",
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
-  },
-  {
-    name: "Google",
-    tagline: "Organize the world’s information",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
-  },
-  {
-    name: "Amazon",
-    tagline: "From A to Z",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
-  },
-  {
-    name: "Microsoft",
-    tagline: "Empowering every person and every organization",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
-  },
-];
+
 
 const PartnersCarousel = () => {
   const settings = {

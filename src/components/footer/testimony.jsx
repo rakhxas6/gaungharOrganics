@@ -3,45 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaStar, FaStarHalf } from "react-icons/fa";
+import {testimonials} from "../../data/products"
 
-const testimonials = [
-  {
-    name: "Sita Rai",
-    location: "Kathmandu",
-    rating: 5,
-    text: "GauGhar oils are pure and full of flavor. It reminds me of traditional homemade ghee.",
-  },
-  {
-    name: "Ram Thapa",
-    location: "Pokhara",
-    rating: 4,
-    text: "I’m impressed with the freshness of their cold-pressed coconut oil. Highly recommended!",
-  },
-  {
-    name: "Anita Sharma",
-    location: "Biratnagar",
-    rating: 5,
-    text: "Great products with excellent packaging. The mustard oil has a rich aroma I love.",
-  },
-  {
-    name: "Hari Lama",
-    location: "Lalitpur",
-    rating: 4,
-    text: "I use their herbal ghee daily. It's pure and tastes amazing on roti and rice.",
-  },
-  {
-    name: "Hari Lama",
-    location: "Lalitpur",
-    rating: 4,
-    text: "I use their herbal ghee daily. It's pure and tastes amazing on roti and rice.",
-  },
-  {
-    name: "Hari Lama",
-    location: "Lalitpur",
-    rating: 4,
-    text: "I use their herbal ghee daily. It's pure and tastes amazing on roti and rice.",
-  },
-];
 
 const TestimonialCarousel = () => {
   const settings = {

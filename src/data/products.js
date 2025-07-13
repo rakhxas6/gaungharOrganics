@@ -11,13 +11,12 @@ import {
   FaSeedling,
 } from "react-icons/fa";
 
-
 const products = [
   {
     id: 1,
     title: "Pure Mustard Oil",
     subtitle:
-      "Wood Pressed · Best for Cooking, Pickles, Massage and Hair · 17gm Omega 3",
+      "Cold Pressed · Best for Cooking, Pickles, Massage and Hair · 17gm Omega 3",
     image: DemoImage,
     rating: 5.0,
     reviews: 34,
@@ -44,7 +43,7 @@ const products = [
         discount: 8,
       },
     ],
-    description: `Pure Mustard Oil is extracted from organically grown mustard seeds using traditional wood pressing methods. Ideal for cooking, pickling, and therapeutic uses.`,
+    description: `Pure Mustard Oil is extracted from organically grown mustard seeds using traditional methods. Ideal for cooking, pickling, and therapeutic uses.`,
     features: [
       "Cold-pressed using traditional 'Kachi Ghani' method",
       "Rich in Omega-3 and antioxidants",
@@ -105,25 +104,25 @@ const offers = [
   },
 ];
 
-export const blogPosts = [
+ const blogPosts = [
   {
     id: 1,
-    title: "5 Reasons Why Wood‑Pressed Oils Are Better",
-    slug: "wood-pressed-oils-benefits",
+    title: "5 Reasons Why Cold‑Pressed Oils Are Better",
+    slug: "Cold-pressed-oils-benefits",
     image: Image,
     category: "Health & Wellness",
     date: "2024-12-15",
     excerpt:
-      "Discover the amazing benefits of wood-pressed oils for a healthier lifestyle and tastier meals.",
+      "Discover the amazing benefits of cold-pressed oils for a healthier lifestyle and tastier meals.",
     content: `Wood-pressed oils, also known as cold-pressed oils, are extracted using traditional wooden churners, preserving the oil’s natural aroma and nutrients. Here’s why you should choose them:
     
-1. **No Heat Involved** – Unlike refined oils, wood-pressed oils are not exposed to high heat, keeping their natural nutrients intact.
+1. **No Heat Involved** – Unlike refined oils, Cold-pressed oils are not exposed to high heat, keeping their natural nutrients intact.
 2. **Rich in Antioxidants** – These oils retain vitamin E and other antioxidants that boost immunity.
 3. **No Chemicals or Preservatives** – Pure, natural, and chemical-free, they’re safer for daily use.
 4. **Better Flavor & Aroma** – You’ll instantly notice the difference in taste and smell.
 5. **Environmentally Friendly** – Traditional extraction methods are sustainable and energy-efficient.
 
-Switching to wood-pressed oils is a small change that brings big health benefits.`,
+Switching to cold-pressed oils is a small change that brings big health benefits.`,
   },
   {
     id: 2,
@@ -163,8 +162,8 @@ Whether you’re making achar or fish curry, mustard oil brings a unique taste t
   },
   {
     id: 4,
-    title: "How to Use Coconut Oil for Glowing Skin",
-    slug: "coconut-oil-skincare-tips",
+    title: "How to Use Mustard Oil for Glowing Skin",
+    slug: "Mustard-oil-skincare-tips",
     image: Image,
     category: "Skincare",
     date: "2025-02-02",
@@ -205,7 +204,6 @@ const blogCategories = [
   "Our Process",
   "Beauty & Care",
 ];
-
 
 const cards = [
   {
@@ -249,4 +247,116 @@ const core = [
   },
 ];
 
-export { products, benefits, offers, blogCategories, cards,core };
+const testimonials = [
+  {
+    name: "Sita Rai",
+    location: "Kathmandu",
+    rating: 5,
+    text: "GauGhar oils are pure and full of flavor. It reminds me of traditional homemade ghee.",
+  },
+  {
+    name: "Ram Thapa",
+    location: "Pokhara",
+    rating: 4,
+    text: "I’m impressed with the freshness of their cold-pressed coconut oil. Highly recommended!",
+  },
+  {
+    name: "Anita Sharma",
+    location: "Biratnagar",
+    rating: 5,
+    text: "Great products with excellent packaging. The mustard oil has a rich aroma I love.",
+  },
+  {
+    name: "Hari Lama",
+    location: "Lalitpur",
+    rating: 4,
+    text: "I use their herbal ghee daily. It's pure and tastes amazing on roti and rice.",
+  },
+  {
+    name: "Hari Lama",
+    location: "Lalitpur",
+    rating: 4,
+    text: "I use their herbal ghee daily. It's pure and tastes amazing on roti and rice.",
+  },
+  {
+    name: "Hari Lama",
+    location: "Lalitpur",
+    rating: 4,
+    text: "I use their herbal ghee daily. It's pure and tastes amazing on roti and rice.",
+  },
+];
+
+const inquiries = [
+  {
+    question: "What are the benefits of using organic mustard oil?",
+    answer:
+      "Organic mustard oil is rich in antioxidants and omega-3 fatty acids, which help improve heart health, boost immunity, and provide natural anti-inflammatory properties.",
+  },
+  {
+    question: "Is cold pressed coconut oil better than refined coconut oil?",
+    answer:
+      "Yes, cold pressed coconut oil retains more nutrients and natural flavor because it’s extracted without heat, unlike refined oils that lose some beneficial compounds during processing.",
+  },
+  {
+    question: "Is cold pressed coconut oil better than refined coconut oil?",
+    answer:
+      "Yes, cold pressed coconut oil retains more nutrients and natural flavor because it’s extracted without heat, unlike refined oils that lose some beneficial compounds during processing.",
+  },
+  {
+    question: "How should I store herbal ghee to keep it fresh?",
+    answer:
+      "Store herbal ghee in an airtight container at room temperature, away from direct sunlight. Properly stored, it can last several months without refrigeration.",
+  },
+  {
+    question: "How should I store herbal ghee to keep it fresh?",
+    answer:
+      "Store herbal ghee in an airtight container at room temperature, away from direct sunlight. Properly stored, it can last several months without refrigeration.",
+  },
+];
+
+
+const partners = [
+  {
+    name: "Apple",
+    tagline: "Think Different",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+  },
+  {
+    name: "Nike",
+    tagline: "Just Do It",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg",
+  },
+  {
+    name: "Google",
+    tagline: "Organize the world’s information",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+  },
+  {
+    name: "Amazon",
+    tagline: "From A to Z",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+  },
+  {
+    name: "Microsoft",
+    tagline: "Empowering every person and every organization",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg",
+  },
+];
+
+
+export {
+  products,
+  benefits,
+  offers,
+  blogPosts,
+  blogCategories,
+  cards,
+  core,
+  testimonials,
+  inquiries,
+  partners,
+};

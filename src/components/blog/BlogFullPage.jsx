@@ -84,13 +84,13 @@ const BlogFullPage = () => {
           {/* Social Share */}
           <div className="flex gap-4 mt-8" data-aos="fade-up">
             <a
-              href="#"
+              href="https://www.facebook.com/thelamenepali"
               className="text-white bg-blue-600 p-2 rounded-full hover:scale-105 transition"
             >
               <FaFacebookF />
             </a>
             <a
-              href="#"
+              href="https://www.x.com/thelamenepali"
               className="text-white bg-sky-500 p-2 rounded-full hover:scale-105 transition"
             >
               <FaTwitter />
